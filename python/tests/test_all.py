@@ -1,6 +1,10 @@
 import pytest
-import maturin_cargo_build_repro
+from maturin_cargo_build_repro import *
 
 
-def test_sum_as_string():
-    assert maturin_cargo_build_repro.sum_as_string(1, 1) == "2"
+def test_py_check():
+    assert py_check_file("Cargo.toml")
+
+def test_py_check_fail():
+    with pytest.raises(Exception):
+        assert py_check_file("Cargo.toml.NO")

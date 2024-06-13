@@ -41,22 +41,22 @@ mod tests {
         let result = simple_call();
         assert_eq!(result, expected);
     }
-    
-        #[test]
-        fn test_find_cfg_file_in_current_directory() {
-            let result = find_file(Path::new("Cargo.toml")).unwrap();
-            assert_eq!(result, PathBuf::from("Cargo.toml"));
-        }
 
-        #[test]
-        fn test_py_check_file() {
-            let result = py_check_file("Cargo.toml").unwrap();
-            assert_eq!(result, "Cargo.toml");
-        }
+    #[test]
+    fn test_find_cfg_file_in_current_directory() {
+        let result = find_file(Path::new("Cargo.toml")).unwrap();
+        assert_eq!(result, PathBuf::from("Cargo.toml"));
+    }
 
-        #[test]
-        fn test_py_check_file_fail() {
-            let result = py_check_file("Cargo.toml.NO");
-            assert!(result.is_err());
-        }
+    #[test]
+    fn test_py_check_file() {
+        let result = py_check_file("Cargo.toml").unwrap();
+        assert_eq!(result, "Cargo.toml");
+    }
+
+    #[test]
+    fn test_py_check_file_fail() {
+        let result = py_check_file("Cargo.toml.NO");
+        assert!(result.is_err());
+    }
 }
