@@ -31,9 +31,6 @@ pub fn py_check_file(file_path: &str) -> PyResult<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::fs::File;
-    use std::io::Write;
-    use tempdir::TempDir;
 
     #[test]
     fn test_simple_call() {

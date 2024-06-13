@@ -10,8 +10,3 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 pyo3 = "0.21.1"
-serde = { version = "1.0", features = ["derive"] }
-
-
-[dev-dependencies]
-tempdir = "0.3.7"
